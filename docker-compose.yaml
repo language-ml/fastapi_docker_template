@@ -1,0 +1,10 @@
+version: "3.4"
+
+services: 
+  hello:
+    image: "hello"
+    build: ./hello
+    ports:
+    - 127.0.0.1:8080:80
+    # environment:
+    #   - ROOT_PATH=/hello
