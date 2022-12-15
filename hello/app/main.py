@@ -16,6 +16,10 @@ class request_hello(BaseModel):
             }
         }
 
+PATH = '/data'
+
 @app.post('/')
 async def say_hello(userinfo: request_hello):
-    return {'output': f'Hello {userinfo.username}'}
+    with open(f'{PATH}/sample.txt') as f:
+	content = f.read()
+    return {'file_content': content, 'output': f'Hello {userinfo.username}'}
